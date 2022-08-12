@@ -51,7 +51,7 @@ def num_grid(lst):
                     else:
                         lst[i-1][j-1] = lst[i-1][j-1]+1 if lst[i-1][j-1]!=-1 else -1
                         lst[i-1][j] = lst[i-1][j]+1 if lst[i-1][j]!=-1 else -1
-                        lst[i-1][j+1] = lst[i-1][j-1] if lst[i-1][j-1]!=-1 else -1
+                        lst[i-1][j+1] = lst[i-1][j+1]+1 if lst[i-1][j+1]!=-1 else -1
                         lst[i+1][j] = lst[i+1][j]+1 if lst[i+1][j]!=-1 else -1
                         lst[i][j+1] = lst[i][j+1]+1 if lst[i][j+1]!=-1 else -1
                         lst[i+1][j+1] = lst[i+1][j+1]+1 if lst[i+1][j+1]!=-1 else -1
