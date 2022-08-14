@@ -15,6 +15,4 @@ class Stack:
         self.stack.append(tmp)
     
     def pop(self):
-        tmp=self.stack[-1]
         self.stack.remove(self.stack[-1])
-        return tmp
