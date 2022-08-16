@@ -1,4 +1,4 @@
-def newRange(a): 
+def newRange(*a): 
     k=[]
     if len(a)==1:
         s=0.0
@@ -18,7 +18,12 @@ def newRange(a):
     return k
 print("*** New Range ***")
 a=[float(i) for i in input("Enter Input : ").split()]
-l=newRange(a)
+if len(a)==1:
+    l=newRange(a[0])
+elif len(a)==2:
+    l=newRange(a[0],a[1])
+else:
+    l=newRange(a[0],a[1],a[2])
 for i in range(len(l)):
     l[i]=float("{:.3f}".format(l[i]))
 print(tuple(l))
