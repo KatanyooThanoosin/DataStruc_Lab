@@ -9,7 +9,7 @@ class Queue:
         return len(self.queue)
     
     def front(self):
-        return self.queue[0]
+        return self.queue[0] if self.size()>0 else -1
     
     def enqueue(self,tmp):
         self.queue.append(tmp)
