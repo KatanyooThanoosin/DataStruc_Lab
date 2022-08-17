@@ -12,7 +12,9 @@ class Stack:
         self.items.append(tmp)
     
     def pop(self):
-        self.items.remove(self.items[-1])
+        tmp=self.items[-1]
+        self.items.remove(tmp)
+        return tmp
         
 print(" *** Stack implement by Python list***")
 ls = [e for e in input("Enter data to stack : ").split()]
