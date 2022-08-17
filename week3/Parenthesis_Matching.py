@@ -15,7 +15,9 @@ class Stack:
         self.items.append(tmp)
     
     def pop(self):
-        self.items.remove(self.items[-1])
+        tmp=self.items[-1]
+        self.items.remove(tmp)
+        return tmp
 
 s=Stack()
 o=["(","{","["]
