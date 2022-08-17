@@ -15,4 +15,4 @@ class Queue:
         self.queue.append(tmp)
     
     def dequeue(self):
-        return self.queue.pop(0)
+        return self.queue.pop(0) if self.size()>0 else -1
