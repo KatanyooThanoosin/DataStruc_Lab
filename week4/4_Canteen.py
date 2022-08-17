@@ -1,8 +1,3 @@
-
-
-#    ยังไม่เสร็จ
-
-
 class Queue:
     def __init__(self):
         self.items = []
@@ -34,10 +29,8 @@ for i in b:
             print("Empty")
         else:
             k=q.dequeue()
-            a.append(k)
-            id.append(k[2:])
             print(k[2:])
-    elif i[2:] in id:
+    else:
         dat=a[id.index(i[2:])]
         while not q.isEmpty() and q.front()[0]!=dat[0]:
             tmp.enqueue(q.dequeue())
@@ -47,5 +40,3 @@ for i in b:
             tmp.enqueue(dat)
             while not q.isEmpty():tmp.enqueue(q.dequeue())
         while not tmp.isEmpty():q.enqueue(tmp.dequeue())
-        a.remove(dat)
-        id.remove(i[2:])
