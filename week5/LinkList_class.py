@@ -17,6 +17,14 @@ class LinkedList:
             if t!=None:s+="->"
         return s
     
+    def size(self):
+        s=0
+        t=self.head
+        while t!=None:
+            s+=1
+            t=t.next
+        return s
+    
     def isEmpty(self):
         return self.head == None
     
@@ -29,7 +37,6 @@ class LinkedList:
             while t.next!=None:
                 t=t.next
             t.next = p
-        self.size+=1
     
     def insert(self, index, data):
         p=Node(data)
@@ -46,4 +53,3 @@ class LinkedList:
                 t=t.next
             p.next = t.next
             t.next = p
-        self.size +=1
