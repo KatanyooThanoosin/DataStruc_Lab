@@ -6,15 +6,20 @@ class Node:
 class LinkedList:
     def __init__(self):
         self.head = None
+        self.size = 0
+    
     def __str__(self):
-        l=[]
+        s=""
         t=self.head
         while t!=None:
-            l.append(t.data)
+            s+=str(t.data)
             t=t.next
-        return l
+            if t!=None:s+="->"
+        return s
+    
     def isEmpty(self):
         return self.head == None
+    
     def append(self,data):
         p = Node(data)
         if self.isEmpty():
@@ -24,3 +29,21 @@ class LinkedList:
             while t.next!=None:
                 t=t.next
             t.next = p
+        self.size+=1
+    
+    def insert(self, index, data):
+        p=Node(data)
+        if self.isEmpty():
+            self.head = p
+        elif index==0:
+            p.next = self.head
+            self.head = p
+        else:
+            t=self.head
+            i = 0
+            while i<index-1:
+                i+=1
+                t=t.next
+            p.next = t.next
+            t.next = p
+        self.size +=1
