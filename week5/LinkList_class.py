@@ -3,53 +3,67 @@ class Node:
         self.data = data
         self.next = None
 
-class LinkedList:
+class LinkList:
     def __init__(self):
         self.head = None
-        self.size = 0
-    
+        
     def __str__(self):
+        t = self.head
         s=""
-        t=self.head
-        while t!=None:
+        while t != None:
             s+=str(t.data)
-            t=t.next
-            if t!=None:s+="->"
-        return s
-    
-    def size(self):
-        s=0
-        t=self.head
-        while t!=None:
-            s+=1
-            t=t.next
+            if t.next != None:s+=" -> "
+            t = t.next
         return s
     
     def isEmpty(self):
-        return self.head == None
+        return self.head==None
     
-    def append(self,data):
-        p = Node(data)
+    def size(self):
+        sum = 0
+        t = self.head
+        while t!=None:
+            sum = sum+1
+            t=t.next
+        return sum
+    
+    def append(self,i):
+        a = Node(i)
         if self.isEmpty():
-            self.head = p
+            self.head = a
         else:
-            t=self.head
-            while t.next!=None:
-                t=t.next
-            t.next = p
+            t = self.head
+            while t.next != None:
+                t = t.next
+            t.next = a
     
     def insert(self, index, data):
-        p=Node(data)
+        a = Node(data)
         if self.isEmpty():
-            self.head = p
-        elif index==0:
-            p.next = self.head
-            self.head = p
+            self.head = a
+        elif index ==0:
+            a.next = self.head
+            self.head = a
         else:
-            t=self.head
+            t = self.head
+            count = 0
+            while count < index-1:
+                t = t.next
+                count+=1
+            a.next = t.next
+            t.next = a
+
+    def pop(self,index):
+        if index == 0:
+            a = self.head.data
+            self.head = self.head.next
+            return a
+        else:
+            t = self.head
             i = 0
             while i<index-1:
-                i+=1
-                t=t.next
-            p.next = t.next
-            t.next = p
+                t = t.next
+                i = i+1
+            a = t.next.data
+            t.next = t.next.next
+            return a
