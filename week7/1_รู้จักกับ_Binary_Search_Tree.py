@@ -40,4 +40,4 @@ T = BST()
 inp = [int(i) for i in input('Enter Input : ').split()]
 for i in inp:
     root = T.insert(i)
-T.printTree(T.root)
+T.printTree(root)
