@@ -3,8 +3,7 @@ def combi(l,k,t=[],i=0):
     return combi(l,k,t,i+1)+combi(l,k,t+[l[i]],i+1)
 def moreThan(a,b):
     if len(a)!=len(b):return len(a)>len(b)
-    for i in range(len(a)):
-        if a[i]!=b[i]:return a[i]>b[i]
+    return next((a[i]>b[i] for i in range(len(a))if a[i]!=b[i]),None) 
 k,inp = input("Enter Input : ").split("/")
 l = [[a.pop(a.index(min(a))) for q in a.copy()] for a in [list(k) for k in set(tuple(j) for j in combi([int(i)for i in inp.split()],int(k)))]]
 if l==[]:print("No Subset")
