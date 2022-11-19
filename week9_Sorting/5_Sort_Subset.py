@@ -7,10 +7,9 @@ def moreThan(a,b):
         if a[i]!=b[i]:return a[i]>b[i]
 k,inp = input("Enter Input : ").split("/")
 l = [[a.pop(a.index(min(a))) for q in a.copy()] for a in [list(k) for k in set(tuple(j) for j in combi([int(i)for i in inp.split()],int(k)))]]
-if l==[]:
-    print("No Subset")
-    exit()
-for i in range(len(l)-1):
-    for j in range(len(l)-1):
-        if moreThan(l[j],l[j+1]):l[j],l[j+1] = l[j+1],l[j]
-for i in l:print(i)
+if l==[]:print("No Subset")
+else:
+    for i in range(len(l)-1):
+        for j in range(len(l)-1):
+            if moreThan(l[j],l[j+1]):l[j],l[j+1] = l[j+1],l[j]
+    for i in l:print(i)
