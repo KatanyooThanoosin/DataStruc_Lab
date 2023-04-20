@@ -35,7 +35,7 @@ while len(nl)>1:
     n=Node("*",le.fre+ri.fre,le,ri)
     i=0
     while True:
-        if nl==[] or i==len(nl) or nl[i].fre <= n.fre:
+        if nl==[] or i==len(nl) or nl[i].fre < n.fre:
             nl=nl[:i]+[n]+nl[i:]
             break
         i+=1
