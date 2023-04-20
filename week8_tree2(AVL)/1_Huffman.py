@@ -44,5 +44,5 @@ d={}
 buildDic(root)
 print(d)
 printTree(root)
-print("Encoded!  : ",end="")
+print("Encoded! : ",end="")
 for i in s:print(d[i],end="")
