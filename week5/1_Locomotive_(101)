@@ -1,0 +1,40 @@
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+
+class LinkList:
+    def __init__(self):
+        self.head=None
+    
+    def __str__(self):
+        l=[]
+        t=self.head
+        while t:
+            l.append(str(t.data))
+            t=t.next
+        return " <- ".join(l)
+    
+    def append(self,data):
+        if not self.head:self.head = Node(data)
+        else:
+            t=self.head
+            while t.next:t=t.next
+            t.next = Node(data)
+            
+    def cut(self):
+        if self.head.data == 0:return self 
+        t=self.head
+        while t.next.data != 0:t=t.next
+        u=t
+        while u.next:u=u.next
+        u.next = self.head
+        self.head = t.next
+        t.next=None
+        return self
+            
+print(" ** Locomotive ***")
+ll = LinkList()
+for i in input("Enter Input : ").split():ll.append(int(i))
+print("Before :",ll)
+print("After :",ll.cut())
